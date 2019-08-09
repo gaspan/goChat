@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>WebSocket</title>
-
     <style type="text/css">
         .form {
             position: fixed;
@@ -37,7 +36,6 @@
 </head>
 <body>
     <div class="container"></div>
-
     <div class="form">
         <form onsubmit="app.doSendMessage(); return false;">
             <div class="placeholder">
@@ -47,7 +45,6 @@
             <button type="submit">Send</button>
         </form>
     </div>
-
     <script type="text/javascript">
         var app = {}
         app.ws = undefined
@@ -66,7 +63,6 @@
 
             app.ws = new WebSocket("ws://localhost:8080/ws?username=" + name)
 
-            // ...
             app.ws.onopen = function() {
                 var message = '<b>me</b>: connected'
                 app.print(message)
@@ -83,7 +79,6 @@
                 } else {
                     message = '<b>' + res.From + '</b>: ' + res.Message 
                 }
-
                 app.print(message)
             }
 
@@ -109,9 +104,7 @@
 
                 document.querySelector('.input-message').value = ''
             }
-
         }
-
         window.onload = app.init
     </script>
 </body>
